@@ -1,3 +1,5 @@
+var path = require('path');
+
 module.exports = {
     // this is the configuration used by webpack
     // mode is used to setup environment : development/production
@@ -6,6 +8,7 @@ module.exports = {
     entry : "./src/engine.js",
     // provides the control over the output
     output : {
+        path : path.resolve(__dirname, 'build'),
         filename : "build.js"
     }
 
