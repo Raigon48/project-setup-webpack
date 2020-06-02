@@ -20,7 +20,8 @@ module.exports = {
     // provides the control over the output
     output : {
         path : path.resolve(__dirname, 'build'),
-        filename : "js/[name].[contenthash].js"
+        filename : "js/[name].js",
+        publicPath : "/assets/"
     }
 
 }
