@@ -14,14 +14,16 @@ module.exports = {
     // mode is used to setup environment : development/production
     mode : "development",
     // provides the entry point for the webpack for bundling project
-    entry : {
-        myfile : './src/engine.js'
-    },
+    entry : './src/engine.js',
     // provides the control over the output
     output : {
         path : path.resolve(__dirname, 'build'),
-        filename : "js/[name].js",
-        publicPath : "/assets/"
+        filename : "js/main.js",
+        publicPath : '/assets/'
+    },
+    devServer : {
+        port : 3000,
+        contentBase : path.join(__dirname, "dist")
     }
 
 }
