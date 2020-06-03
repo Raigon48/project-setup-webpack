@@ -32,7 +32,23 @@ module.exports = {
     module : {
         rules : [
             {
+                test : /\.tsx?$/ ,
+                exclude : /node_modules/,
+                loader : 'awesome-typescript-loader'
+            },
+            {
+                test : /\.jsx?$/ ,
+                exclude : /node_modules/ ,
+                use : ['babel-loader']
+            },
+            {
+                test : /\.scss$/ ,
+                exclude : /node_modules/,
+                use : ['style-loader', 'sass-loader']
+            },
+            {
                 test : /\.css$/, //we know its a css file
+                include : /node_modules/,
                 use : ['style-loader', 'css-loader'] // css-loader -> style-loader
             }
         ]
