@@ -1,5 +1,7 @@
 var path = require('path') ;
 var webpack = require('webpack') ;
+const HTMLWebpackPlugin = require('html-webpack-plugin');
+const HTMLWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 /*
 [hash]
 [chunkhash]
@@ -18,7 +20,7 @@ module.exports = {
     // provides the control over the output
     output : {
         path : path.resolve(__dirname, 'build'),
-        filename : "js/main.js",
+        filename : "js/main.[hash].js",
         publicPath : '/assets/'
     },
     devServer : {
@@ -27,6 +29,19 @@ module.exports = {
         writeToDisk : false,
         hot : true
     },
-    plugins : [new webpack.HotModuleReplacementPlugin()]
+    plugins : [
+        new webpack.HotModuleReplacementPlugin(),
+        new HTMLWebpackPlugin({
+            title : 'Hello World!',
+            template : './dist/template.html',
+            filename : '../dist/index.html',
+            minify : {
+                collapseWhitespace : false,
+                removeComments : false
+            },
+            alwaysWriteToDisk : true
+        }),
+        new HTMLWebpackHarddiskPlugin()
+    ]
 
 }

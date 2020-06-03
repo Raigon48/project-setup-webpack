@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev" : "webpack-dev-server",
+    "dev": "webpack-dev-server",
     "build": "webpack"
   },
   "keywords": [],
@@ -16,6 +16,8 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "html-webpack-harddisk-plugin": "^1.0.1",
+    "html-webpack-plugin": "^4.3.0",
     "path": "^0.12.7"
   }
 }
