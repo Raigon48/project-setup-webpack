@@ -1,5 +1,5 @@
-var path = require('path');
-
+var path = require('path') ;
+var webpack = require('webpack') ;
 /*
 [hash]
 [chunkhash]
@@ -24,7 +24,9 @@ module.exports = {
     devServer : {
         port : 3000,
         contentBase : path.join(__dirname, "dist"),
-        writeToDisk : false
-    }
+        writeToDisk : false,
+        hot : true
+    },
+    plugins : [new webpack.HotModuleReplacementPlugin()]
 
 }
