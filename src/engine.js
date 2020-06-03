@@ -1,4 +1,5 @@
 import {writeToScreen, changeH1} from './test' ;
+import './styles.css' ;
 
 writeToScreen();
 

@@ -29,6 +29,14 @@ module.exports = {
         writeToDisk : false,
         hot : true
     },
+    module : {
+        rules : [
+            {
+                test : /\.css$/, //we know its a css file
+                use : ['style-loader', 'css-loader'] // css-loader -> style-loader
+            }
+        ]
+    },
     plugins : [
         new webpack.HotModuleReplacementPlugin(),
         new HTMLWebpackPlugin({
