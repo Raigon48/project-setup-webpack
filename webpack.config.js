@@ -16,8 +16,11 @@ module.exports = {
     // mode is used to setup environment : development/production
     mode : "development",
     // provides the entry point for the webpack for bundling project
-    entry : './src/engine.js',
+    entry : './src/engine.tsx',
     // provides the control over the output
+    resolve : {
+        extensions : ['.ts', '.tsx', '.scss', '.css', '.js', '.jsx']
+    },
     output : {
         path : path.resolve(__dirname, 'build'),
         filename : "js/main.[hash].js",
@@ -44,7 +47,7 @@ module.exports = {
             {
                 test : /\.scss$/ ,
                 exclude : /node_modules/,
-                use : ['style-loader', 'sass-loader']
+                use : ['style-loader', 'css-loader', 'sass-loader']
             },
             {
                 test : /\.css$/, //we know its a css file
